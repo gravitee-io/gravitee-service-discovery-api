@@ -20,7 +20,13 @@ import java.util.Map;
 
 public interface Service {
 
-    String id();
+    default String id() {
+        return vendor() + "#" + instanceId();
+    };
+
+    String vendor();
+
+    String instanceId();
 
     String host();
 
