@@ -23,7 +23,6 @@ import java.util.Map;
  * @author GraviteeSource Team
  */
 public interface Service {
-
     String HTTP_SCHEME = "http";
     String HTTPS_SCHEME = "https";
     String DEFAULT_BASE_PATH = "/";

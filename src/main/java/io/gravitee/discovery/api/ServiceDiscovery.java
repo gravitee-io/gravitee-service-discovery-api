@@ -23,7 +23,6 @@ import io.gravitee.discovery.api.event.Handler;
  * @author GraviteeSource Team
  */
 public interface ServiceDiscovery {
-
     void listen(Handler<Event> handler) throws Exception;
 
     void stop() throws Exception;
