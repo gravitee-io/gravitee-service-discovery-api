@@ -21,6 +21,5 @@ package io.gravitee.discovery.api.event;
  */
 @FunctionalInterface
 public interface Handler<T extends Event> {
-
     void handle(T result);
 }

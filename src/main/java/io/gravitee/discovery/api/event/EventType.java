@@ -20,6 +20,6 @@ package io.gravitee.discovery.api.event;
  * @author GraviteeSource Team
  */
 public enum EventType {
-
-    REGISTER, UNREGISTER;
+    REGISTER,
+    UNREGISTER,
 }
