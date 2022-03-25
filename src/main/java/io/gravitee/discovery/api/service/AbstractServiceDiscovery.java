@@ -18,7 +18,6 @@ package io.gravitee.discovery.api.service;
 import io.gravitee.discovery.api.ServiceDiscovery;
 import io.gravitee.discovery.api.event.Event;
 import io.gravitee.discovery.api.event.EventType;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -30,44 +29,43 @@ import java.util.stream.Collectors;
  */
 public abstract class AbstractServiceDiscovery<T extends Service> implements ServiceDiscovery {
 
-  private List<T> services = new ArrayList<>();
+    private List<T> services = new ArrayList<>();
 
-  public Event registerEndpoint(T service) {
-    services.add(service);
-    return new Event() {
-      @Override
-      public EventType type() {
-        return EventType.REGISTER;
-      }
+    public Event registerEndpoint(T service) {
+        services.add(service);
+        return new Event() {
+            @Override
+            public EventType type() {
+                return EventType.REGISTER;
+            }
 
-      @Override
-      public Service service() {
-        return service;
-      }
-    };
-  }
+            @Override
+            public Service service() {
+                return service;
+            }
+        };
+    }
 
-  public Event unregisterEndpoint(T service) {
-    services.remove(service);
-    return new Event() {
-      @Override
-      public EventType type() {
-        return EventType.UNREGISTER;
-      }
+    public Event unregisterEndpoint(T service) {
+        services.remove(service);
+        return new Event() {
+            @Override
+            public EventType type() {
+                return EventType.UNREGISTER;
+            }
 
-      @Override
-      public Service service() {
-        return service;
-      }
-    };
-  }
+            @Override
+            public Service service() {
+                return service;
+            }
+        };
+    }
 
-  public T getService(Predicate<T> predicate) {
-    return services.stream().filter(predicate).findAny().orElse(null);
-  }
+    public T getService(Predicate<T> predicate) {
+        return services.stream().filter(predicate).findAny().orElse(null);
+    }
 
-  public List<T> getServices(Predicate<T> predicate) {
-    return services.stream().filter(predicate).collect(Collectors.toList());
-  }
-
+    public List<T> getServices(Predicate<T> predicate) {
+        return services.stream().filter(predicate).collect(Collectors.toList());
+    }
 }

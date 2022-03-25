@@ -19,5 +19,4 @@ package io.gravitee.discovery.api;
  * @author David BRASSELY (david.brassely at graviteesource.com)
  * @author GraviteeSource Team
  */
-public interface ServiceDiscoveryConfiguration {
-}
+public interface ServiceDiscoveryConfiguration {}

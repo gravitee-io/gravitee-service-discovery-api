@@ -22,7 +22,6 @@ import io.gravitee.discovery.api.service.Service;
  * @author GraviteeSource Team
  */
 public interface Event {
-
     EventType type();
 
     Service service();
