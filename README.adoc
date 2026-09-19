@@ -10,3 +10,14 @@ image:https://f.hubspotusercontent40.net/hubfs/7600448/gravitee-github-button.jp
 == Description
 The service discovery API contains the interfaces to implement in order to create a service discovery plugin for Gravitee.io APIM. +
 An example can be found https://github.com/gravitee-io/gravitee-service-discovery-consul[here]
+
+== Compatibility matrix
+
+|===
+| Plugin version | APIM            | Java version
+
+| 2.x            | 4.7.x to latest | 21
+| 1.x            | 4.2.x to latest | 8
+|===
+
+The *Java version* column is the bytecode level of the latest release of each line, which sets the minimum runtime able to load the artifact — APIM runs on Java 21 from 4.7 onwards. The top line is not released yet: it is the one this change prepares.
